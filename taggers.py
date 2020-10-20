@@ -1,6 +1,6 @@
 import requests
 
-
+url = "http://ws.clarin-pl.eu/nlprest2/base/process"
 payload = "{\n    \"text\": \"Ala ma kota i wszyscy jej zazdroszczą. Jej kot jest leniwy, ale nikt o tym nie wie.\",\n    \"lpmn\": \"morphoDita\",\n    \"user\": \"xxx@yyy.com\"\n}"
 headers = {
   'Content-Type': 'application/json'
