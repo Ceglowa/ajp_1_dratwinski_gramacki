@@ -73,14 +73,10 @@ if __name__ == '__main__':
                    lambda tag: tag.startswith("ger")]
 
     verb_rules = [lambda tag: tag.startswith("fin"),
-                  lambda tag: tag.startswith("bedzie"),
-                  lambda tag: tag.startswith("aglt"),
                   lambda tag: tag.startswith("praet"),
                   lambda tag: tag.startswith("impt"),
                   lambda tag: tag.startswith("imps"),
-                  lambda tag: tag.startswith("inf"),
-                  lambda tag: tag.startswith("pcon"),
-                  lambda tag: tag.startswith("pan")]
+                  lambda tag: tag.startswith("inf")]
 
     adj_rules = [lambda tag: tag.startswith("adj"),
                  lambda tag: tag.startswith("adja"),
