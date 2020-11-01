@@ -17,7 +17,7 @@ def segmentate(file_name):
             sentence = text[begin_of_sentence:index+1]
             last_space = sentence.rfind(" ")
             last_word_in_sentence = sentence[last_space:]
-            is_shortcut = re.search("it[pd]|inż|inz|ur", last_word_in_sentence)
+            is_shortcut = re.search("it[pd]|inż|inz|ur|zm", last_word_in_sentence)
 
             if is_shortcut is None:
                 sentences.append({"text":text[begin_of_sentence:index+1]})
@@ -42,9 +42,9 @@ def segmentate(file_name):
         sentences[sen_index]['words'] = words_for_sentence
 
     with open('segmented_text.json', 'w') as fout:
-        json.dump(sentences, fout)
+        json.dump(sentences, fout, ensure_ascii=False)
 
 if __name__ == '__main__':
-    file_name = "data/train/Katolicyzm_2850522.txt"
+    file_name = "data/for_report.txt"
     segmentate(file_name)
 
