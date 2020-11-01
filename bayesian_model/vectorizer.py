@@ -87,7 +87,7 @@ if __name__ == '__main__':
                  lambda tag: tag.startswith("adjp"),
                  lambda tag: tag.startswith("adjc"),
                  lambda tag: tag.startswith("pact"),
-                 lambda tag: tag.startswith("ppas"),]
+                 lambda tag: tag.startswith("ppas")]
 
 
 
