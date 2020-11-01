@@ -19,7 +19,7 @@ def get_tagging_from_morphoDita(text, output_filename):
     response = requests.request("POST", CLARIN_URL, headers=headers, data=payload)
 
     xml = response.text.encode('utf8')
-    output_file = open(PATH_TO_RESULTS + os.path.sep + f"{output_filename}_morphoDita.xml", "wb")
+    output_file = open(output_filename, "wb")
     output_file.write(xml)
 
 
@@ -34,7 +34,7 @@ def get_tagging_from_wcrft2(text, output_filename):
     response = requests.request("POST", CLARIN_URL, headers=headers, data=payload)
 
     xml = response.text.encode('utf8')
-    output_file = open(PATH_TO_RESULTS + os.path.sep + f"{output_filename}_wcrft2.xml", "wb")
+    output_file = open(output_filename, "wb")
     output_file.write(xml)
 
 
@@ -42,12 +42,12 @@ def get_tagging_from_krnnt(text, output_filename):
     response = requests.request("POST", "http://localhost:9003", data=text.encode('utf-8'))
 
     xml = response.text.encode('utf-8')
-    output_file = open(PATH_TO_RESULTS + os.path.sep + f"{output_filename}_krnnt.xml", "wb")
+    output_file = open(output_filename, "wb")
     output_file.write(xml)
 
 if __name__ == '__main__':
     text = open("data/poleval_tagging_task/test-raw.txt", "r", encoding="utf-8").read()
 
-    get_tagging_from_krnnt(text, "pol_eval_test_raw")
-    get_tagging_from_morphoDita(text, "pol_eval_test_raw")
-    get_tagging_from_wcrft2(text, "pol_eval_test_raw")
+    get_tagging_from_krnnt(text, PATH_TO_RESULTS + os.path.sep + "pol_eval_test_raw_krnnt.xml")
+    get_tagging_from_morphoDita(text, PATH_TO_RESULTS + os.path.sep + "pol_eval_test_raw_morphoDita.xml")
+    get_tagging_from_wcrft2(text, PATH_TO_RESULTS + os.path.sep + "pol_eval_test_raw_wcrft2.xml")
