@@ -1,4 +1,3 @@
-from sklearn.feature_extraction.text import CountVectorizer
 import os
 from lxml import etree
 import pickle as pkl
