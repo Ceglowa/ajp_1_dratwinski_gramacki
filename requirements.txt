@@ -1,3 +1,4 @@
-requests
-lxml
-scikit-learn
+requests~=2.24.0
+lxml~=4.6.1
+scikit-learn~=0.23.2
+numpy~=1.19.3
