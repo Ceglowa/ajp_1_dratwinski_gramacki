@@ -184,3 +184,35 @@ Wyniki ewaluacji przedstawiono w tabeli poniżej.
 
 
 ### Porównanie tagerów jako narzędzi do preprocessingu w zadaniu klasyfikacji tekstów
+
+Testowane powyżej tagery zostały wykorzystane do ekstrakcji cech z dokumentów tekstowych na potrzeby problemu klasyfikacji. Korzystając z oznaczeń gramatycznych tagerów budowano reprezentację *bag-of-words* wykorzystywaną później przez klasyfikator bayesowski (implementacja *MultinomialNB* z pakietu *scikit-learn*).
+
+#### Dane
+
+Do klasyfikacji wykorzystano korpus Wikipedii w języku polskim dostępny w CLARIN-PL. Zawiera on ~9,5 tys. tekstów z 34 tematów i podzielony jest na zbiór treningowy i testowy. 
+
+#### Proces przetwarzania tekstów
+
+Przygotowanie reprezentacji tekstu w postaci wektora było realizowane w następujący sposób:
+
+1. Analiza z wykorzystaniem tagera dokonującego segmentacji, wydobycia form bazowych wyrazów oraz oznaczenia części mowy.
+
+1. Filtrowanie wyrazów do części mowy. Przetestowano trzy warianty:
+
+    * rzeczowniki (tagi: *subst*, *depr*, *ger*)
+    * czasowniki (tagi: *fin*, *praet*, *impt*, *imps*, *inf*)
+    * przymiotniki i imiesłowy przymiotnikowe (tagi: *adj*, *adja*, *adjp*, *adjc*, *pact*, *ppas*)
+    
+1.  Kodowanie do reprezentacji *bag-of-words* z wykorzystaniem klasy *CountVectorizer* z pakietu *scikit-learn* 
+
+#### Wyniki klasyfikacji
+
+Porównanie skuteczności klasyfikatorów przedstawiono w tabeli poniżej.
+
+| | Nouns | Verbs | Adjectives |
+|---|---:|---:|---:|
+|KRNNT| 87% | 43% | 76% |
+|MorphoDita| 87% | 43% | 77% |
+|wcrft2| 87% | 42% | 77% |
+
+Dobrór tagera nie miał wpływu na jakość działania klasyfikatora. Duże znaczenie miał natomiast dobór części mowy. Zdecydowanie najlepsze rezultaty osiągnięto stosując rzeczowniki. Pokrywa się to z oczekiwaniami, ponieważ to rzeczowniki wużyte w tekście wydają się mieć największy związek z tematyką tekstu. Ciekawy jest wysoki wynik klasyfikacji z wykorzystaniem przymiotników. Słaba skuteczność czasowników może wynikać z dużej liczby tych wyrazów powtarzających się w większości tekstów przez co nie wnoszą one rozróżnienia między tematami.
