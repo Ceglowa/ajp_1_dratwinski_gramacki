@@ -199,9 +199,14 @@ Przygotowanie reprezentacji tekstu w postaci wektora było realizowane w następ
 
 1. Filtrowanie wyrazów do części mowy. Przetestowano trzy warianty:
 
-    * rzeczowniki (tagi: *subst*, *depr*, *ger*)
-    * czasowniki (tagi: *fin*, *praet*, *impt*, *imps*, *inf*)
-    * przymiotniki i imiesłowy przymiotnikowe (tagi: *adj*, *adja*, *adjp*, *adjc*, *pact*, *ppas*)
+    * rzeczowniki: 
+        * *subst*, *depr* - są to formy czasownika w korpusie NKJP 
+        * *ger* - jest to rzeczownik odczasownikowy, więc pomimo tego, że bazowa forma jest czasownikiem zaklasyfikowano go jako rzeczownik
+    * czasowniki 
+        * *fin*, *praet*, *impt*, *imps*, *inf* - wszystkie są różnymi formami czasownika (bezokolicznik, tryb rozkazujący, ...)
+    * przymiotniki i imiesłowy przymiotnikowe 
+        * *adj*, *adja*, *adjp*, *adjc* - formy przymiotnika w korpusie NKJP
+        * *pact*, *ppas* - oznaczają imiesłów przymiotnikowy, który nie będąc przymiotnikiem spełnią podobną funkcję w zdaniu. Stąd użycie również tych tagów
     
 1.  Kodowanie do reprezentacji *bag-of-words* z wykorzystaniem klasy *CountVectorizer* z pakietu *scikit-learn* 
 
