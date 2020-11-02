@@ -1,0 +1,41 @@
+                                   precision    recall  f1-score   support
+
+                          Albania       0.86      0.60      0.71        92
+             Amerykanscy-prozaicy       0.72      0.99      0.84       103
+                         Arabowie       0.94      0.45      0.61        33
+                     Astronautyka       0.88      0.87      0.88        93
+                          Choroby       0.89      0.89      0.89        81
+                            Egipt       0.90      0.78      0.84        92
+                  Ekologia-roslin       0.88      0.94      0.91        86
+                  Filmy-animowane       0.90      0.91      0.91        92
+                    Galezie-prawa       0.88      0.47      0.61        90
+                  Gry-komputerowe       0.94      0.87      0.90        98
+                       Karkonosze       0.93      0.95      0.94        82
+                       Katolicyzm       0.77      0.98      0.86        84
+                          Komiksy       0.81      0.79      0.80        84
+                        Komputery       0.96      1.00      0.98       100
+                         Kotowate       1.00      0.97      0.98        59
+                     Kultura-Chin       0.87      0.83      0.85        88
+                           Monety       1.00      0.99      0.99        97
+                   Muzyka-powazna       0.83      0.91      0.87        93
+                      Narciarstwo       0.95      0.95      0.95        91
+                       Narkomania       0.90      0.89      0.90        92
+               Niemieccy-wojskowi       0.55      0.95      0.69        76
+                           Optyka       0.96      0.78      0.86        88
+            Pierwiastki-chemiczne       0.96      0.99      0.97        87
+                      Pilka-nozna       0.94      1.00      0.97        78
+            Propaganda-polityczna       0.66      0.72      0.69        86
+                     Rachunkowosc       0.88      0.90      0.89        93
+                        Samochody       0.98      0.96      0.97        83
+                         Samoloty       0.83      0.97      0.90        71
+                    Sporty-silowe       0.96      0.97      0.96        90
+System-opieki-zdrowotnej-w-Polsce       0.80      0.91      0.85        95
+                           Szachy       0.97      0.95      0.96        91
+                  Wojska-pancerne       0.95      0.98      0.96        93
+                          Zegluga       0.92      0.80      0.85        83
+                            Zydzi       0.90      0.58      0.71       108
+
+                         accuracy                           0.87      2952
+                        macro avg       0.88      0.87      0.87      2952
+                     weighted avg       0.88      0.87      0.87      2952
+

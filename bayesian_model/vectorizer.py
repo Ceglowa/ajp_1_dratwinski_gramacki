@@ -98,4 +98,32 @@ if __name__ == '__main__':
         y_pred = clf.predict(X_test)
 
         with open(f"nouns_{tagger}.txt", 'w') as f:
-            print(classification_report(y_true=y_test, y_pred=y_pred, labels=labels), file=f)
+            print(classification_report(y_true=y_test, y_pred=y_pred, target_names=labels), file=f)
+
+
+    for tagger in ['krnnt', 'morpho', 'wcrft2']:
+        X_train, y_train, X_test, y_test, labels = get_vectorized_data(tagger, verb_rules)
+
+        print("got data")
+
+        clf = MultinomialNB()
+        clf.fit(X_train, y_train)
+
+        y_pred = clf.predict(X_test)
+
+        with open(f"verbs_{tagger}.txt", 'w') as f:
+            print(classification_report(y_true=y_test, y_pred=y_pred, target_names=labels), file=f)
+
+
+    for tagger in ['krnnt', 'morpho', 'wcrft2']:
+        X_train, y_train, X_test, y_test, labels = get_vectorized_data(tagger, adj_rules)
+
+        print("got data")
+
+        clf = MultinomialNB()
+        clf.fit(X_train, y_train)
+
+        y_pred = clf.predict(X_test)
+
+        with open(f"adjs_{tagger}.txt", 'w') as f:
+            print(classification_report(y_true=y_test, y_pred=y_pred, target_names=labels), file=f)
