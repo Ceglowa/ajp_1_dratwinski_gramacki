@@ -157,6 +157,18 @@ Albert Einstein (ur. 14 marca 1879 w Ulm, zm. 18 kwietnia 1955 w Princeton) – 
 ]
 ```
 
+### Zapoznanie z analizatorem morfologicznym Morfeusz 2
+
+Morfeusz 2 służy do przeprowadzenia analizy morfologicznej tekstu. Polega ona na podziale na segmenty, a następnie analizie fleksyjnej znalezionych segmentów. Morfeusz analizuje segmenty *indywidualnie* co znaczy bez uwzględnienia kontekstu. Z tego powodu zwraca wszystkie możliwe formy wyrazowe, które mogą przyjąć formę analizowanego segmentu. Przykładowo dla wyrazy **mam** zwróci trzy formy: **mama**, **mieć**, **mamić**.
+
+Oznaczanie form wyrazowych oparte jest na tagsecie SGJP. Dla każdej formy określane są następujące elementy:
+
+* klasa (np. przymiotnik) - ta pozycja definiuje jakie będą kolejne pola, poniżej przykład dla przymiotnika
+* liczba (np. pojedyncza)
+* przypadek (np. mianownik)
+* rodzaj (np. żeński) - rozróżniane jest 5 klas rodzajowych
+* stopień (np. wyższy)
+
 
 ### Porównanie tagerów na danych z konkursu PolEval 2017
 
